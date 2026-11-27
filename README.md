@@ -21,6 +21,12 @@ Every acquired source remains `not evaluated for training` unless a separate, re
 
 Run `python3 scripts/validate_sources.py` to verify the recorded local-file hashes and source inventory after that validator is added.
 
+## Learning-engine staging gate
+
+The dated [`learning-engine-gate-2026-11-27.json`](manifests/learning-engine-gate-2026-11-27.json) links the existing source inventory and records which named subsets may be staged for a downstream preflight. Staging is not training approval: existing training statuses remain unchanged, the LOC records still show `PENDING_REVIEW`, and no training pipeline or runtime adapter is enabled by this repository.
+
+The 17-source review and rights decisions are recorded in [`source-candidate-register-2026-11-27.json`](manifests/source-candidate-register-2026-11-27.json) and [`the dated audit report`](docs/audits/2026-11-27-source-review-and-training-gate.md). No new candidate content was acquired. The NOAA NWS glossary is excluded until its remaining pages have been reviewed; other candidates remain excluded or metadata-only under the public-domain/CC0 selection rule.
+
 ## Scope and safeguards
 
 Only the specific subsets and revisions named in their notices are covered by the license assessment. Do not infer license terms for other parts of upstream websites or repositories. Candidate datasets with unresolved rights questions are listed in `docs/audits/2026-11-25-source-candidates/`; they are not included as acquired content. No synthetic examples or conversations are supplied as training data.
